@@ -1,0 +1,36 @@
+Feature: Manual Tests for Music Tracks
+  As a user of the Radio and Music Services
+  I want to test the music tracks functionality
+  So that I the user can enjoy the music services
+
+  Scenario 1: The type field for every track is always 'music-track'
+    Given I am a user of music services
+    And There are music tracks exists
+    When I view the details of all the available music tracks
+    Then the 'type' field should always display as 'music_track'
+
+   Scenario 2: The id field for every track is unique
+     Given I am a user of music services
+     And There are music tracks exists
+     When I view the details of all the available music tracks
+     Then the 'id' field of every track should be different from all the other tracks
+     And the 'id' field for every track should start with 'p'
+
+   Scenario 3: title lists display for every track
+     Given I am a user of music services
+     And There are music tracks exists
+     When I view the details of all the available music tracks
+     Then the primary, secondary and tertiary title lists should display for every tack
+     And the tertiary title list should always empty
+
+   Scenario 4: synopses and image image_url for every track is null
+     Given I am a user of music services
+     And There are music tracks exists
+     When I view the details of all the available music tracks
+     Then the synopses and image image_url for every track is should show as empty
+
+   Scenario 5: All the music tracks should display
+      Given I am a user of music services
+      And I have 14 music tracks exists
+      When I view the music tracks
+      Then I should see all the 14 music tracks
